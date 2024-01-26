@@ -1,0 +1,218 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 class="text-theme-primary">Add New Insurance</h3>
+        <p class="mb-5">You Can Add Your New Insurance here</p>
+      </div>
+    </div>
+
+
+
+<form   [formGroup]="postFormInsurance" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="card shadow-effect">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label>PolicyId</label>
+              <input type="text" class="form-control"  formControlName="PolicyId"
+              [ngClass]="{
+                'is-invalid': fc['PolicyId'].touched && fc['PolicyId'].invalid}"
+                />
+
+              <div *ngIf="fc['PolicyId'].errors?.['minlength']">
+                <span class="text-danger text-center mt-1" *ngIf="fc['PolicyId'].touched && fc['PolicyId'].invalid">
+                  *** PolicyId must be at least 5 number ***
+                </span>
+              </div>
+
+            <div *ngIf="fc['PolicyId'].errors?.['required']">
+              <span class="text-danger text-center mt-1" *ngIf="fc['PolicyId'].touched && fc['PolicyId'].invalid">
+                *** PolicyId is required ***
+              </span> 
+
+            </div >
+
+           
+             
+            </div>
+
+           <div class="form-group">
+              <label>PolicyName</label>
+              <input type="text" class="form-control"  formControlName="PolicyName"
+              [ngClass]="{
+                'is-invalid': fc['PolicyName'].touched && fc['PolicyName'].invalid}"
+                />
+
+              <div *ngIf="fc['PolicyName'].errors?.['minlength']">
+                <span class="text-danger text-center mt-1" *ngIf="fc['PolicyName'].touched && fc['PolicyName'].invalid">
+                  *** PolicyName must be at least 10 number ***
+                </span>
+              </div>
+
+            <div *ngIf="fc['PolicyName'].errors?.['required']">
+              <span class="text-danger text-center mt-1" *ngIf="fc['PolicyName'].touched && fc['PolicyName'].invalid">
+                *** PolicyName is required ***
+              </span> 
+
+            </div >
+            </div>
+
+            <div class="form-group">
+                <label>Policy Duration</label>
+                <select  class="form-control" formControlName="Policyduration" >
+                    <option  disabled selected>Please select a Policy Duration</option>
+                    <option > 2 Years</option>
+                  <option  > 4 Years</option>
+                  <option  > 6 Years</option>
+
+
+                 
+                </select>
+                <div *ngIf="fc['Policyduration'].errors?.['required']">
+                  <span class="text-danger text-center mt-1" *ngIf="fc['Policyduration'].touched && fc['Policyduration'].invalid">
+                    *** Policyduration is required ***
+                  </span> 
+      
+                </div >
+              </div>
+
+              <div class="form-group">
+                <label>Policy category</label>
+                <select  class="form-control" formControlName="Policycategory" >
+                  <option  disabled selected>Please select a Policycategory</option>
+                  <option  > 2 wheeler</option>
+                  <option  > 4 wheeler</option>
+
+
+                 
+                </select>
+                <div *ngIf="fc['Policycategory'].errors?.['required']">
+                  <span class="text-danger text-center mt-1" *ngIf="fc['Policycategory'].touched && fc['Policycategory'].invalid">
+                    *** Policycategory is required ***
+                  </span> 
+      
+                </div >
+              </div>
+
+            <div class="form-group">
+              <label>Policy Description</label>
+              <textarea cols="20" rows="5" class="form-control"  formControlName="PolicyDescription"></textarea>
+              <div *ngIf="fc['PolicyDescription'].errors?.['minlength']">
+                <span class="text-danger text-center mt-1" *ngIf="fc['PolicyDescription'].touched && fc['PolicyDescription'].invalid">
+                  *** PolicyDescription must be at least 50 characters ***
+                </span>
+              </div>
+
+            <div *ngIf="fc['PolicyDescription'].errors?.['required']">
+              <span class="text-danger text-center mt-1" *ngIf="fc['PolicyDescription'].touched && fc['PolicyDescription'].invalid">
+                *** PolicyDescription is required ***
+              </span> 
+
+            </div >
+
+            </div>
+
+            <div class="form-group">
+                <label>Policy Type</label>
+                <select  class="form-control" formControlName="PolicyType" >
+                  <option  disabled selected >Please select a PolicyType</option>
+                  <option  > 1'st party</option>
+                  <option  >  2'st party</option>
+                  <option >  3'st party</option>
+                  <option  >  Add ons</option>
+
+
+
+
+                 
+                </select>
+                <div *ngIf="fc['PolicyType'].errors?.['required']">
+                  <span class="text-danger text-center mt-1" *ngIf="fc['PolicyType'].touched && fc['PolicyType'].invalid">
+                    *** PolicyType is required ***
+                  </span> 
+      
+                </div >
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+
+        <div class="form-group">
+            <label>Policy price</label>
+            <input type="text" class="form-control"  formControlName="Policyprice"
+            [ngClass]="{
+              'is-invalid': fc['Policyprice'].touched && fc['Policyprice'].invalid}"
+              />
+
+
+          <div *ngIf="fc['Policyprice'].errors?.['required']">
+            <span class="text-danger text-center mt-1" *ngIf="fc['Policyprice'].touched && fc['Policyprice'].invalid">
+              *** Policyprice is required ***
+            </span> 
+
+          </div >
+          </div>
+        
+          <div class="form-group">
+            <label>Policy provider</label>
+            <select  class="form-control" formControlName="Policyprovider" >
+              <option  disabled selected>Please select a Policyprovider</option>
+              <option  > SBI Insurance</option>
+              <option > United India Insurance</option>
+              <option  > HDFC Insurance</option>
+              <option > India Insurance</option>
+              <option > Globe Insurance</option>
+              <option  > North America Insurance</option>
+               <option  > ZURICH Insurance</option>
+              <option  > Guardian Insurance</option>
+               <option  > Farmer Insurance</option>
+             <option  > STAR Insurance</option>
+             <option  > LiFe Insurance</option>       
+                 <option  > RELAINCE Insurance</option>
+                 <option  > KOTAK Insurance</option>
+                 <option > MAX Insurance</option>
+                 <option  > ICCE LOMVARD Insurance</option>
+
+
+
+
+
+
+        </select>
+            <div *ngIf="fc['Policyprovider'].errors?.['required']">
+              <span class="text-danger text-center mt-1" *ngIf="fc['Policyprovider'].touched && fc['Policyprovider'].invalid">
+                *** Policyprovider is required ***
+              </span> 
+  
+            </div >
+          </div>
+
+        
+        <div class="form-group">
+            <label >Post Image</label>
+            <img [src]="imgSrc" class="form-control img-fluid img-preview" alt="Image Preview">
+            <input type="file" class="form-control" accept="image/*" (change)="showpreview($event)" formControlName="postimg"/>
+            <div *ngIf="fc['postimg'].errors?.['required']">
+              <span class="text-danger text-center mt-1" *ngIf="fc['postimg'].touched && fc['postimg'].invalid">
+                *** postimg is required ***
+              </span> 
+  
+            </div > 
+          </div>
+         
+        
+      </div>
+    </div>
+    <div class="col-md-12 text-center mt-2 mb-2">
+        <button class="btn btn-info bg-theme" [disabled]="postFormInsurance.invalid">Add Insurance</button>
+        <button class="btn btn-warning ml-3" routerLink="/insurance" >
+           Back to Insurance Post
+        </button>
+      </div>
+    </form>
+    </div>

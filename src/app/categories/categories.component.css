@@ -1,0 +1,46 @@
+.btn-sub{    
+    margin-top: 5px;
+    height: 50px;
+    border: none;
+    font-size: 13px;
+    background-color: var(--primary-color);
+    width: 85%;
+    color: white;
+} 
+.bg-theme-secondary{
+    background-color: blueviolet !important;
+}
+.text-theme-primary{
+    color: white !important;
+}
+.cols{
+    border-radius: 20px;
+    height: 350px;
+}
+.btns{
+    /* background-color: black !important; */
+}
+.endbtn{
+    margin-left: 7px;
+}
+.container{
+    color: white;
+    font-size: 16px;
+}
+.btn-block{
+    color: white;
+    background-color: black;
+}
+@media (max-width: 767px) {
+    .btn-sub{
+        width:100px;
+        margin-left: 10px;
+        height: 50px;
+        font-size: 13px;
+    }
+   .subs-text{
+    width: 600px;
+    margin-left: 30px;
+}
+    
+}

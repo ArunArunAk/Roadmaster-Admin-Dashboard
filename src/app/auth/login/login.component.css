@@ -1,0 +1,60 @@
+
+.bg-theme{
+    background-color: var(--primary-color);
+}
+.bg-theme-secondary{
+    background-color: var(--secondary-color);
+}
+container{
+    color:white
+}
+input[type="email"],
+input[type="password"] {
+  border-radius: 20px;
+  /* Add any other styling properties as needed */
+}
+
+.btn-theme{     
+    height: 58px;
+    width:100%;
+    border: none;
+    font-size: 13px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+   
+}
+.bg-theme-secondary{
+    /* background-color: blueviolet; */
+
+}
+.text-theme-primary{
+    color: var(--primary-color);
+}
+span{
+    text-align: center;
+}
+.img-fluid {
+    margin-top: 40px;
+    border-radius: 20px;
+}
+h4{
+    margin-top: 3px;
+    font-size: 17px;
+}
+.card{
+    border-radius: 20px;
+    border: none;
+}
+.btn{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-fluid {
+       display: none;
+    }
+  }
+  

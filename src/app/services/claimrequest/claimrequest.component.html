@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card p-5">
+        <h3 class="text-center text-white">Claim Request </h3>
+        <h6 class="text-center text-white">Claim Insurance Currently : {{count}}</h6>
+    </div>
+
+    <div class="table-responsive">
+        <table class="mt-5 table table-bordered row-border" style="table-layout: fixed; width: 100%">
+            <thead>
+              <tr>
+                <th style="width: 10%">S.No</th>
+                <th style="width: 10%">username</th>
+                <th style="width: 10%">email</th>
+                <th style="width: 20%">Motor Number</th>
+                <th style="width: 10%">PolicyId</th>
+                <th style="width: 10%">Claim Apply Date</th>
+                <th style="width: 20%">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let commands of cliaminsurance; let i = index" class="border-bottom">
+                <td style="width:10%">{{i+1}}</td>
+                <td style="width: 10%">{{commands.data.firstName}}</td>
+                <td style="width: 10%">{{commands.data.email}}</td>
+                <td style="width: 20%">{{commands.data.bikeno}}</td>
+                <td style="width: 10%">{{commands.data.policyId}}</td>
+                <td style="width: 10%">{{commands.data.claimDate.toMillis()| date}}</td>
+                <td style="width: 20%">
+                  <button class="btn btn-success" (click)="allowclaim(commands.id,true)">Allow Free Insurance</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

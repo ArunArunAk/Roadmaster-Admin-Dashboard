@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card   ">
+          <div class="bg-theme-secondary ">
+              <h3 class="text-center mt-3">All Blog Posts</h3>
+              <p class="text-center">From Here you Can Manage Your Blog Posts</p>
+              <div class=" text-center mb-3">
+                  <button class="btn  bg-theme btn-1" routerLink="/posts/new"> Add New Post</button>
+                  <button class="btn btn-warning ml-2 btn-2" routerLink="/">Bact to Dashboard</button>
+              </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <div class="card shadow-effect">
+          <div class="card-body">
+            <div class="table-responsive">
+  
+              <table class="table table-bordered row-border" style="table-layout: fixed; width: 100%">
+                <thead>
+                  <tr>
+                    <th style="width: 5%">No</th>
+                    <th style="width: 20%">Post Image</th>
+                    <th style="width: 15%">Title</th>
+                    <!-- <th >Excerpt</th> -->
+                    <th style="width: 15%" >Category</th>
+                    <th style="width: 12%">Date</th>
+                    <th style="width: 33%" >Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let postsdetail of Allposts; let i = index">
+                    <td style="width: 5%">{{i+1}}</td>
+                    <td style="width: 20%">
+                      <img src="{{postsdetail.data.postimgpath}}" class="img img-fluid" alt="Post Image" 
+                      width="100px" style="max-width: 100%; height: auto; max-height: 150px;">
+                    </td>
+                    <td  style="width: 15%">{{postsdetail.data.title}}</td>
+                    <!-- <td style="width: 25%">{{postsdetail.data.excerpt}}</td> -->
+                    <td style="width: 12%">{{postsdetail.data.category.category}}</td>
+                    <td  style="width: 15%">{{postsdetail.data.createAt.toMillis()| date}}</td>
+                    <td style="width: 33%">
+                      
+                      <!-- //routerparameter also use to pass the id -->
+                      <button class="btn btn-sm btn-warning" [routerLink]="['/posts/new']" [queryParams]="{ id: postsdetail.id }">Update</button>&nbsp;
+                      <!-- //routerparameter also use to pass the id -->
+  
+                      <button class="btn btn-sm btn-danger ml-2" (click)="ondelete(postsdetail.data.postimgpath,postsdetail.id)">Delete</button>&nbsp;
+  
+                      <button class="btn btn-sm btn-success ml-2" *ngIf="!postsdetail.data.isFeautured" (click)="onFeatured(postsdetail.id,true)"   >Mark Feauture</button>
+                      <button *ngIf="postsdetail.data.isFeautured" (click)="onFeatured(postsdetail.id,false)"  class="btn btn-sm btn-info ml-2" >remove Feauture</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  

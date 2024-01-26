@@ -1,0 +1,83 @@
+<div class="container">
+    <!-- Add an *ngIf to conditionally show the form based on login state -->
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://previews.123rf.com/images/garagestock/garagestock1701/garagestock170113262/68676678-admin-concept-on-tablet-pc-screen-with-icons.jpg" width="500" height="500" class="img-fluid  mr-3">
+      </div>
+  
+      <div class="col-md-6 ">
+        <div class="card  ">
+          <div class="card-body">
+            <div class="text-center">
+              <h3 class=" mt-1">Login</h3>
+              <p class="">Please Login to Your Admin account</p>
+            </div>
+  
+            <!-- Add the ngForm directive to the form element -->
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+              <div class="form-group mt-4">
+                <!-- Use ngModel to bind the input values to the model -->
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  name="email"
+                  #email="ngModel"
+                  ngModel
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                  required
+                />
+                <div *ngIf="email.touched && email.invalid">
+                  <span
+                    class="text-danger text-center mt-1"
+                    *ngIf="email.errors?.['required']"
+                  >
+                    <h4 class="text-center">*** Email field is required ***</h4>
+                  </span>
+  
+                  <span
+                    class="text-danger text-center mt-1"
+                    *ngIf="email.errors?.['pattern']"
+                  >
+                    <h4 class="text-center text-danger">
+                      *** Please enter a valid email address ***
+                    </h4>
+                  </span>
+                </div>
+              </div>
+  
+              <div class="form-group mt-4">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  name="password"
+                  ngModel
+                  #password="ngModel"
+                  required
+                />
+                <span
+                  class="text-danger text-center mt-1"
+                  *ngIf="password.touched && password.invalid"
+                >
+                  <h4 class="text-center text-white">*** password field is required ***</h4>
+                </span>
+              </div>
+  
+              <button
+                type="submit"
+                class="btn  btn-theme btn-block mt-4"
+                [disabled]="!loginForm.valid"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+      </div>
+      </div>
+  
+    </div>
+  </div>
+  

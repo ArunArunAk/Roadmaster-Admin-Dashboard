@@ -1,0 +1,29 @@
+
+.bg-theme{
+    background-color: var(--primary-color);
+}
+.bg-theme-secondary{
+    background-color: var(--secondary-color);
+}
+
+
+.btn-theme{     
+    height: 58px;
+    width:100%;
+    border: none;
+    font-size: 13px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+   
+}
+.text-theme-primary{
+    color: var(--primary-color);
+}
+span{
+    text-align: center;
+}
+h4{
+    margin-top: 5px;
+    font-size: 17px;
+}

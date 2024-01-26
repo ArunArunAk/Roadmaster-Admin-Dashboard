@@ -1,0 +1,52 @@
+/* .card{
+    outline: none;
+    border: none;
+    height: 200px;
+    cursor: pointer;
+} */
+
+
+
+/* sidebar.component.css */
+h1{
+  color: grey;
+}
+.container{
+  margin-top: 130px;
+}
+  
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+ .bg-theme-secondary{
+  background-color: blueviolet !important;
+  color: white;
+ } 
+ 
+ i{
+  color:white
+ }
+
+  ul.nav {
+    background-color: #333;
+    padding-top: 20px;
+  }
+  .cardinner{
+    border-radius: 20px;
+  }
+  ul.nav li {
+    padding: 10px;
+  }
+  .card{
+    border: none;
+  }
+  
+  ul.nav a {
+    color: #fff;
+  }
+  h2{
+    color: white;
+    font-size: 24;
+  }
+ 

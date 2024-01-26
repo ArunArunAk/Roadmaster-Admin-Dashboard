@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="card p-5">
+        <h3 class="text-center text-white">Free Insurance Request </h3>
+        <h6 class="text-center text-white">Free Insurance Currently : {{count}}</h6>
+    </div>
+
+    <div class="table-responsive">
+  
+        <table class="mt-5 table table-bordered row-border" style="table-layout: fixed; width: 100%">
+            <thead>
+              <tr>
+                <th style="width: 10%">S.No</th>
+                <th style="width: 10%">username</th>
+                <th style="width: 10%">email</th>
+                <th style="width: 10%">PolicyId</th>
+                <th style="width: 10%"> Ins name</th>
+                <th style="width: 10%">Insurance Start Date</th>
+                <th style="width: 10%">Expired Date</th>
+                <th style="width: 10%">Kind of Insurance</th>
+                <th style="width: 20%">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let commands of freeinsurance; let i = index">
+                <td style="width:10%">{{i+1}}</td>
+                <td style="width: 10%">{{commands.data.firstname}}</td>
+                <td style="width: 10%">{{commands.data.email}}</td>
+                <td style="width: 10%">{{commands.data.policyid}}</td>
+                <td style="width: 10%">{{commands.data.insuranceprovider
+                }}</td>
+                <td style="width: 10%">{{commands.data.TakeInsurancedate.toMillis()| date}}</td>
+                <td style="width: 10%">{{commands.data.ExpirationDate.toMillis()| date
+                }}</td>
+                <td style="width: 10%">{{commands.data.policycategory}}</td>
+                <td style="width: 20%">
+                  <button class="btn btn-success" (click)="allowcomments(commands.id,true)">Allow Free Insurance</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </div>
+
+</div>

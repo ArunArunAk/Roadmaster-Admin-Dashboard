@@ -1,0 +1,14 @@
+footer{
+    margin-top: 10vh;
+    height: 150px;
+    padding: 15px;
+    background-color: var( --navbar-foolter-color);
+}
+.site-logo{
+      /* //another code in style.css */
+
+    font-size: 1.2em;
+}
+.nav-link{
+    color: var(--primary-color);
+}

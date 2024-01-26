@@ -1,0 +1,125 @@
+<div class="container">
+    <!-- Add an *ngIf to conditionally show the form based on login state -->
+    <div class="row">
+      <div class="col-md-3"></div>
+  
+      <div class="col-md-6 mt-5">
+        <div class="card bg-theme-secondary shadow-effect p-5">
+          <div class="card-body">
+            <div class="text-center">
+              <h3 class="text-theme-primary">Registration</h3>
+                 <p>Please Enter Ur detail below here </p>  
+            <!-- Add the ngForm directive to the form element -->
+            <form #RegistrationForm="ngForm" (ngSubmit)="onSubmit(RegistrationForm)">
+              <div class="form-group">
+                <!-- Use ngModel to bind the input values to the model -->
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First name"
+                  name="firstname"
+                  #firstname="ngModel"
+                  ngModel
+                  required
+                />
+                <div *ngIf="firstname.touched && firstname.invalid">
+                  <span
+                    class="text-danger text-center mt-1"
+                    *ngIf="firstname.errors?.['required']"
+                  >
+                    <h4 class="text-center">*** firstname field is required ***</h4>
+                  </span>
+  
+                
+                </div>
+              </div>
+             
+              <div class="form-group mt-2">
+                <!-- Use ngModel to bind the input values to the model -->
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Last name"
+                  name="Lastname"
+                  #Lastname="ngModel"
+                  ngModel
+                  required
+                />
+                <div *ngIf="Lastname.touched && Lastname.invalid">
+                  <span
+                    class="text-danger text-center mt-1"
+                    *ngIf="Lastname.errors?.['required']"
+                  >
+                    <h4 class="text-center">*** Lastname field is required ***</h4>
+                  </span>
+  
+                
+                </div>
+              </div>
+
+              <div class="form-group mt-2">
+                <!-- Use ngModel to bind the input values to the model -->
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  name="email"
+                  #email="ngModel"
+                  ngModel
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                  required
+                />
+                <div *ngIf="email.touched && email.invalid">
+                  <span
+                    class="text-danger text-center mt-1"
+                    *ngIf="email.errors?.['required']"
+                  >
+                    <h4 class="text-center">*** Email field is required ***</h4>
+                  </span>
+  
+                  <span
+                    class="text-danger text-center mt-1"
+                    *ngIf="email.errors?.['pattern']"
+                  >
+                    <h4 class="text-center">
+                      *** Please enter a valid email address ***
+                    </h4>
+                  </span>
+                </div>
+              </div>
+  
+              <div class="form-group mt-2">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  name="password"
+                  ngModel
+                  #password="ngModel"
+                  required
+                />
+                <span
+                  class="text-danger text-center mt-1"
+                  *ngIf="password.touched && password.invalid"
+                >
+                  <h4 class="text-center">*** password field is required ***</h4>
+                </span>
+              </div>
+
+  
+              <button
+                type="submit"
+                class="btn btn-theme btn-info btn-block mt-2" 
+                [disabled]="!RegistrationForm.valid"
+              >
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+  

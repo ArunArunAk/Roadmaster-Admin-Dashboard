@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="card p-5">
+      <h3 class="text-center text-white">Total RoadMaster Subscribers</h3>
+      <h6 class="text-center text-white">Total user current: {{ total }}</h6>
+  </div>
+
+  <div class="table-responsive table-bordered mt-5">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>S.No</th>
+                  <th>First Name</th>
+                  <th>Email</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let userss of subscribers; let i = index" class="border-bottom">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ userss.data.username }}</td>
+                  <td>{{ userss.data.email }}</td>
+                  <td><button class="btn btn-danger">Delete</button></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
